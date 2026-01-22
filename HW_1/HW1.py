@@ -15,6 +15,7 @@ import os
 
 wage = pd.read_csv('./Python data/wage1.csv')
 
+# Build a local data library to save the Python format data
 # Create output directory
 os.makedirs('HW1_output', exist_ok=True)
 # ---------------------------------------------------------
@@ -54,12 +55,13 @@ wage['wage_rank'] = pd.qcut(wage['wage'], q = 5, labels = False)
 # 3. Compute the mean, standard deviation of salary (for female and male separately)
 wage.sort_values(by='wage_rank', ascending=True, inplace=True)
 
-
+# Female
 wage_female = wage[wage['female'] == 1]
 summary_female = wage_female.groupby('wage_rank')['wage'].agg(['mean','std']).reset_index()
 print("Female Statistics:")
 print(summary_female)
 
+# Male
 wage_male = wage[wage['female'] == 0]
 summary_male = wage_male.groupby('wage_rank')['wage'].agg(['mean','std']).reset_index()
 print("Male Statistics:")
