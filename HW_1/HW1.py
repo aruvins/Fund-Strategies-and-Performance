@@ -13,11 +13,11 @@ import os
 # Read the excel data (wage1.csv) file into Python
 # ---------------------------------------------------------
 
-wage = pd.read_csv('./Python data/wage1.csv')
+wage = pd.read_csv('Python data/wage1.csv')
 
 # Build a local data library to save the Python format data
 # Create output directory
-os.makedirs('HW1_output', exist_ok=True)
+os.makedirs('HW_1/HW1_output', exist_ok=True)
 
 # ---------------------------------------------------------
 # Edit data

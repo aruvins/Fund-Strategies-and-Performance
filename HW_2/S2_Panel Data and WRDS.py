@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 #Clean data: take absolute value of price, sometimes remove price<$5
 date_format = "%Y%m%d"
-msf=pd.read_csv('msf.csv', parse_dates=['DATE'], date_parser=lambda x: pd.to_datetime(x, format=date_format))
+msf=pd.read_csv('Python data/msf.csv', parse_dates=['DATE'], date_parser=lambda x: pd.to_datetime(x, format=date_format))
 msf=msf[['PERMNO','DATE','PRC','SHROUT','RET']]
 #condition=(msf['DATE'].dt.year<=2000) & (msf['DATE'].dt.year>=1990)
 #msf=msf[condition]
